@@ -64,8 +64,8 @@ class SplashScreen extends React.Component {
     render() {
           const splashStyle = {
             logo: {
-                width: 150,
-                height:  110,
+                width: 170,
+                height:  140,
                 alignItems: 'center',
                 justifyContent: 'center',
             },
