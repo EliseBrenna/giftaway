@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Font from 'expo-font';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 import { 
   StyleSheet,
     Text,
@@ -10,12 +11,13 @@ import {
      } from 'react-native';
 
 
-import mom from '../img/mom.svg';
-import dad from '../img/dad.svg';
-import brother from '../img/brother.svg';
-import sister from '../img/sister.svg';
-import girlfriend from '../img/girlfriend.svg';
-import boyfriend from '../img/boyfriend.svg';
+import mom from '../img/mom.png';
+import dad from '../img/dad.png';
+import brother from '../img/brother.png';
+import sister from '../img/sister.png';
+import girlfriend from '../img/girlfriend.png';
+import boyfriend from '../img/boyfriend.png';
+import giftaway from '../img/giftaway_logo.png';
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -118,10 +120,36 @@ export default class Home extends React.Component {
 
 class SplashScreen extends React.Component {
     render() {
+          const splashStyle = {
+            logo: {
+                width: 170,
+                height:  140,
+                alignItems: 'center',
+                justifyContent: 'center',
+            },
+            container: {
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '100vw',
+                height: '100vh'
+            }
+        };
+
         return (
-            <View>
-                <Text>Hei</Text>
+
+            <View style={splashStyle.container}>
+                <LinearGradient
+                    colors={['#f8b195', '#f67280']}
+                    style={splashStyle.container}>
+                    <Image source={{uri: giftaway }} style={splashStyle.logo} />
+                </LinearGradient>   
             </View>
+
+
+    
+                
+
         )
     }
 }
