@@ -10,12 +10,12 @@ import {
      } from 'react-native';
 
 
-import mom from '../img/mom.png';
-import dad from '../img/dad.png';
-import brother from '../img/brother.png';
-import sister from '../img/sister.png';
-import girlfriend from '../img/girlfriend.png';
-import boyfriend from '../img/boyfriend.png';
+import mom from '../img/mom.svg';
+import dad from '../img/dad.svg';
+import brother from '../img/brother.svg';
+import sister from '../img/sister.svg';
+import girlfriend from '../img/girlfriend.svg';
+import boyfriend from '../img/boyfriend.svg';
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -70,7 +70,7 @@ export default class Home extends React.Component {
                         <TouchableOpacity>
                             <Image source={{uri: mom}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Mom</Text>
+                        <Text>Mom</Text>
                     </View>
 
                     <View style={styles.profiles}>
@@ -152,9 +152,5 @@ const styles = StyleSheet.create({
         width: 100,
         height:  100,
         resizeMode: 'contain',
-    },
-    customFont: {
-        fontFamily: 'Nunito-Regular',
-        fontSize: '14px'
     }
   });
