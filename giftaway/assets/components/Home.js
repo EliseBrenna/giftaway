@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Font from 'expo-font';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableOpacity, Touchable } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { 
   StyleSheet,
@@ -85,42 +85,42 @@ export default class Home extends React.Component {
                         <TouchableOpacity>
                             <Image source={{uri: mom}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Mom</Text>
+                        <Text style={styles.customFont}>MOM</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: dad}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Dad</Text>
+                        <Text style={styles.customFont}>DAD</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: brother}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Brother</Text>
+                        <Text style={styles.customFont}>BROTHER</Text>
                     </View>
-
+                    
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: sister}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Sister</Text>
+                        <Text style={styles.customFont}>SISTER</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: girlfriend}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Girlfriend</Text>
+                        <Text style={styles.customFont}>GIRLFRIEND</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: boyfriend}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text style={styles.customFont}>Boyfriend</Text>
+                        <Text style={styles.customFont}>BOYFRIEND</Text>
                     </View>
 
                 </View>
@@ -178,7 +178,7 @@ class SplashScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#F8B195',
+      backgroundColor: '#FFF',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -190,10 +190,14 @@ const styles = StyleSheet.create({
     },
     profiles: {
         textAlign: 'center',
-        flexBasis: '170px',
+        flexBasis: '120px',
         alignItems: 'center',
         justifyContent: 'center',
         marginVertical: 25,
+        backgroundColor: '#000',
+        margin: '10px',
+        borderRadius: '12px',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
     },
     profilesImages: {
         width: 100,
@@ -206,6 +210,10 @@ const styles = StyleSheet.create({
     },
     customFont: {
         fontFamily: 'Nunito-Light',
-        fontSize: '16px'
+        fontSize: '12px',
+        color: '#FFF',
+        letterSpacing: '1px',
+        fontWeight: 'bold',
+        paddingBottom: '10px'
     }
   });
