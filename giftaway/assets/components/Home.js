@@ -38,6 +38,19 @@ export default class Home extends React.Component {
 
     async componentDidMount() {
 
+        try {
+            await Font.loadAsync({
+              'Quicksand-Bold': require('../fonts/Quicksand-Bold.ttf'),
+              'Nunito-Light': require('../fonts/Nunito-Light.ttf')
+            })
+      
+            this.setState({
+              fontLoaded: true
+            })
+          } catch (err) {
+            console.log(err);
+          }
+
         const data = await this.performTimeConsumingTask();
 
         if (data !== null) {
@@ -63,7 +76,7 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Text>WHO ARE YOU GETTING A GIFT?</Text>
+                <Text style={styles.customFontHeader}>WHO ARE YOU GETTING A GIFT?</Text>
 
                 <View style={styles.profilesContainer}>
 
@@ -78,35 +91,35 @@ export default class Home extends React.Component {
                         <TouchableOpacity>
                             <Image source={{uri: dad}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Dad</Text>
+                        <Text style={styles.customFont}>Dad</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: brother}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Brother</Text>
+                        <Text style={styles.customFont}>Brother</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: sister}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Sister</Text>
+                        <Text style={styles.customFont}>Sister</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: girlfriend}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Girlfriend</Text>
+                        <Text style={styles.customFont}>Girlfriend</Text>
                     </View>
 
                     <View style={styles.profiles}>
                         <TouchableOpacity>
                             <Image source={{uri: boyfriend}} style={styles.profilesImages}/>
                         </TouchableOpacity>
-                        <Text>Boyfriend</Text>
+                        <Text style={styles.customFont}>Boyfriend</Text>
                     </View>
 
                 </View>
@@ -132,6 +145,11 @@ class SplashScreen extends React.Component {
                 justifyContent: 'center',
                 width: '100vw',
                 height: '100vh'
+            },
+            slogan: {
+                fontFamily: 'Quicksand-Bold',
+                fontSize: 18,
+                color: 'white'
             }
         };
 
@@ -139,9 +157,10 @@ class SplashScreen extends React.Component {
 
             <View style={splashStyle.container}>
                 <LinearGradient
-                    colors={['#f8b195', '#f67280']}
+                    colors={['#ef0870', '#52308c']}
                     style={splashStyle.container}>
-                    <Image source={{uri: giftaway }} style={splashStyle.logo} />
+                    {/* <Image source={{uri: giftaway }} style={splashStyle.logo} /> */}
+                    <Text style={splashStyle.slogan}>Don't gift up!</Text>
                 </LinearGradient>   
             </View>
 
@@ -180,8 +199,12 @@ const styles = StyleSheet.create({
         height:  100,
         resizeMode: 'contain',
     },
+    customFontHeader: {
+        fontFamily: 'Quicksand-Bold',
+        fontSize: '20px'
+    },
     customFont: {
-        fontFamily: 'Nunito-Regular',
-        fontSize: '14px'
+        fontFamily: 'Nunito-Light',
+        fontSize: '16px'
     }
   });
