@@ -11,8 +11,8 @@ import {
      } from 'react-native';
 
 
-import mom from '../img/mom.png';
-import dad from '../img/dad.png';
+import mom from '../img/mother.png';
+import dad from '../img/father.png';
 import brother from '../img/brother.png';
 import sister from '../img/sister.png';
 import girlfriend from '../img/girlfriend.png';
