@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "gender": "all",
+    "product": "socks",
+    "price": "5$",
+    "age": "everyone"
+  },
+  {
+    "id": "2",
+    "gender": "female",
+    "product": "underwear",
+    "price": "20$",
+    "age": "20-40"
+  },
+  {
+    "id": "3",
+    "gender": "all",
+    "product": "wine tasting",
+    "price": "60$",
+    "age": "20-40"
+  },
+  {
+    "id": "4",
+    "gender": "all",
+    "product": "airpods",
+    "price": "150$",
+    "age": "20-40"
+  },
+  {
+    "id": "5",
+    "gender": "male",
+    "product": "watch",
+    "price": "200$",
+    "age": "20-40"
+  }
+]

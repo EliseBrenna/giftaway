@@ -10,7 +10,6 @@ import {
     ActivityIndicator,
      } from 'react-native';
 
-
 import mom from '../img/mother.png';
 import dad from '../img/father.png';
 import brother from '../img/brother.png';
@@ -82,7 +81,7 @@ export default class Home extends React.Component {
                 <View style={styles.profilesContainer}>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Mother')}>
                             <Image source={{uri: mom}} style={styles.profilesImages}/>
                         </TouchableOpacity>
                         <Text style={styles.customFont}>MOM</Text>
