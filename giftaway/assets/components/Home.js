@@ -77,7 +77,10 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.customFontHeader}>CHOOSE THE PERSON YOU ARE GETTING A GIFT</Text>
+                <Text style={styles.customFontHeader}>DON'T GIFT UP YET . . .</Text>
+
+                <Text style={styles.customFont2}>Let us assist you with finding the perfect present. <br>
+                </br>Pick the person you need help with.</Text>
 
                 <View style={styles.profilesContainer}>
 
@@ -206,7 +209,8 @@ const styles = StyleSheet.create({
     },
     customFontHeader: {
         fontFamily: 'Quicksand-Bold',
-        fontSize: '20px'
+        fontSize: '20px',
+        paddingBottom: '20px'
     },
     customFont: {
         fontFamily: 'Nunito-Light',
@@ -215,5 +219,14 @@ const styles = StyleSheet.create({
         letterSpacing: '1px',
         fontWeight: 'bold',
         paddingBottom: '10px'
+    },
+    customFont2: {
+        fontFamily: 'Nunito-Light',
+        fontSize: '12px',
+        color: '#000',
+        letterSpacing: '1px',
+        fontWeight: 'bold',
+        paddingBottom: '10px',
+        textAlign: 'center'
     }
   });
