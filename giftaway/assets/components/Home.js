@@ -77,7 +77,7 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.customFontHeader}>DON'T GIFT UP YET . . .</Text>
+                <Text style={styles.customFontHeader}>DON'T GIFT UP YET . .</Text>
 
                 <Text style={styles.customFont2}>Let us assist you with finding the perfect present. <br>
                 </br>Pick the person you need help with.</Text>
@@ -85,49 +85,49 @@ export default class Home extends React.Component {
                 <View style={styles.profilesContainer}>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Mom')}>
                             <Image source={{uri: mom}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>MOM</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Dad')}>
                             <Image source={{uri: dad}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>DAD</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Brother')}>
                             <Image source={{uri: brother}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>BROTHER</Text>
+                        </TouchableOpacity>
                     </View>
                     
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Sister')}>
                             <Image source={{uri: sister}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>SISTER</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Girlfriend')}>
                             <Image source={{uri: girlfriend}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>GIRLFRIEND</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Boyfriend')}>
                             <Image source={{uri: boyfriend}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>BOYFRIEND</Text>
+                        </TouchableOpacity>
                     </View>
 
                 </View>
-
+    
             </View>
         )
 
@@ -228,5 +228,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         paddingBottom: '10px',
         textAlign: 'center'
-    }
+    },
+
   });
