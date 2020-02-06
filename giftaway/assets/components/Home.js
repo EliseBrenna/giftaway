@@ -23,10 +23,12 @@ export default class Home extends React.Component {
     static navigationOptions = {
         title: '',
         headerStyle: {
-            height: 0,
-            borderBottomWidth: 0
-        }
-    };
+          backgroundColor: '#FFF',
+          height: 0,
+          borderBottomWidth: 0
+        },
+        headerTintColor: '#FFF',
+      };
 
     constructor(props) {
         super(props);
