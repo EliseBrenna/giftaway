@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Touchable } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from 'react-native-popup-menu';
+import Slider from "react-native-slider";
 import { 
   StyleSheet,
     Text,
@@ -27,6 +28,10 @@ export default class Boyfriend extends React.Component {
         headerTintColor: '#FFF',
       };
 
+      state = {
+        value: 1
+      };
+
 
     render() {
         return (
@@ -40,7 +45,13 @@ export default class Boyfriend extends React.Component {
 
                         <MenuOptions>
                             <MenuOption value={'Price'}>
-                                <Text style={styles.customFont}>Price</Text>
+                                <Slider
+                                value={this.state.value}
+                                onValueChange={value => this.setState({ value })}
+                                />
+                                <Text style={styles.customFont}>
+                                    Price: ${this.state.value}
+                                </Text>
                             </MenuOption>
 
                             <MenuOption value={'Age'}>
@@ -51,6 +62,7 @@ export default class Boyfriend extends React.Component {
 
                     </Menu>
                 </MenuProvider>
+
                 <Text>Boyfriend</Text>
             </View>
         )
