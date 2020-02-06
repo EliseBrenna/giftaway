@@ -22,10 +22,12 @@ export default class Home extends React.Component {
     static navigationOptions = {
         title: '',
         headerStyle: {
-            height: 0,
-            borderBottomWidth: 0
-        }
-    };
+          backgroundColor: '#FFF',
+          height: 0,
+          borderBottomWidth: 0
+        },
+        headerTintColor: '#FFF',
+      };
 
     constructor(props) {
         super(props);
@@ -76,54 +78,57 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.customFontHeader}>WHO ARE YOU GETTING A GIFT?</Text>
+                <Text style={styles.customFontHeader}>DON'T GIFT UP YET . .</Text>
+
+                <Text style={styles.customFont2}>Let us assist you with finding the perfect present. <br>
+                </br>Pick the person you need help with.</Text>
 
                 <View style={styles.profilesContainer}>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Mother')}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Mom')}>
                             <Image source={{uri: mom}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>MOM</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Dad')}>
                             <Image source={{uri: dad}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>DAD</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Brother')}>
                             <Image source={{uri: brother}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>BROTHER</Text>
+                        </TouchableOpacity>
                     </View>
                     
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Sister')}>
                             <Image source={{uri: sister}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>SISTER</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Girlfriend')}>
                             <Image source={{uri: girlfriend}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>GIRLFRIEND</Text>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.profiles}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Boyfriend')}>
                             <Image source={{uri: boyfriend}} style={styles.profilesImages}/>
-                        </TouchableOpacity>
                         <Text style={styles.customFont}>BOYFRIEND</Text>
+                        </TouchableOpacity>
                     </View>
 
                 </View>
-
+    
             </View>
         )
 
@@ -205,7 +210,8 @@ const styles = StyleSheet.create({
     },
     customFontHeader: {
         fontFamily: 'Quicksand-Bold',
-        fontSize: '20px'
+        fontSize: '20px',
+        paddingBottom: '20px'
     },
     customFont: {
         fontFamily: 'Nunito-Light',
@@ -214,5 +220,15 @@ const styles = StyleSheet.create({
         letterSpacing: '1px',
         fontWeight: 'bold',
         paddingBottom: '10px'
-    }
+    },
+    customFont2: {
+        fontFamily: 'Nunito-Light',
+        fontSize: '12px',
+        color: '#000',
+        letterSpacing: '1px',
+        fontWeight: 'bold',
+        paddingBottom: '10px',
+        textAlign: 'center'
+    },
+
   });
