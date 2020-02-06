@@ -77,7 +77,7 @@ export default class Home extends React.Component {
         return (
             <View style={styles.container}>
 
-                <Text style={styles.customFontHeader}>WHO ARE YOU GETTING A GIFT?</Text>
+                <Text style={styles.customFontHeader}>CHOOSE THE PERSON YOU ARE GETTING A GIFT</Text>
 
                 <View style={styles.profilesContainer}>
 
