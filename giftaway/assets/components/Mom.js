@@ -13,6 +13,10 @@ import {
     YellowBox
      } from 'react-native';
 
+import * as data from '../../src/gifts.json';
+const gifts = data.default;
+const motherGifts = gifts.filter(mother => mother.gender === 'female');
+console.log(motherGifts);
 
 
 export default class Mom extends React.Component {

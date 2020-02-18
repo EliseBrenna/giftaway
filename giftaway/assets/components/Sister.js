@@ -13,8 +13,6 @@ import {
     YellowBox
      } from 'react-native';
 
-
-
 export default class Sister extends React.Component {
     static navigationOptions = {
         title: '',
