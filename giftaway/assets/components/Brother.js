@@ -2,6 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Touchable } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from 'react-native-popup-menu';
+import Slider from "react-native-slider";
 import { 
   StyleSheet,
     Text,
@@ -21,9 +22,12 @@ export default class Brother extends React.Component {
         headerStyle: {
           backgroundColor: '#FFF',
           height: '30px',
-          borderBottomWidth: 0
+          borderBottomWidth: 0,
         },
-        headerTintColor: '#FFF',
+        headerTintColor: '#000',
+      };
+      state = {
+        value: 0
       };
 
 
@@ -39,7 +43,18 @@ export default class Brother extends React.Component {
 
                         <MenuOptions>
                             <MenuOption value={'Price'}>
-                                <Text style={styles.customFont}>Price</Text>
+                                <Slider
+                                style={{width: 190, height: 30, borderRadius: 50}}
+                                minimumValue={10}
+                                maximumValue={500}
+                                step={10}
+                            
+                                value={this.state.value}
+                                onValueChange={value => this.setState({ value })}
+                                />
+                                <Text style={styles.customFont}>
+                                    Price: ${this.state.value}
+                                </Text>
                             </MenuOption>
 
                             <MenuOption value={'Age'}>
@@ -50,6 +65,7 @@ export default class Brother extends React.Component {
 
                     </Menu>
                 </MenuProvider>
+
                 <Text>Brother</Text>
             </View>
         )
