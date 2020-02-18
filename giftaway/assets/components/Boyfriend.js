@@ -23,13 +23,13 @@ export default class Boyfriend extends React.Component {
         headerStyle: {
           backgroundColor: '#FFF',
           height: '30px',
-          borderBottomWidth: 0
+          borderBottomWidth: 0,
         },
-        headerTintColor: '#FFF',
+        headerTintColor: '#000',
       };
-
+      
       state = {
-        value: 1
+        value: 0
       };
 
 
@@ -46,6 +46,11 @@ export default class Boyfriend extends React.Component {
                         <MenuOptions>
                             <MenuOption value={'Price'}>
                                 <Slider
+                                style={{width: 190, height: 30, borderRadius: 50}}
+                                minimumValue={10}
+                                maximumValue={500}
+                                step={10}
+                            
                                 value={this.state.value}
                                 onValueChange={value => this.setState({ value })}
                                 />

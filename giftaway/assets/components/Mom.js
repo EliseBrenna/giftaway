@@ -2,15 +2,13 @@ import React from 'react';
 import { TouchableOpacity, Touchable } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Menu, MenuProvider, MenuOptions, MenuOption, MenuTrigger} from 'react-native-popup-menu';
+import Slider from 'react-native-slider';
 import { 
   StyleSheet,
     Text,
     View,
     Image,
     ActivityIndicator,
-    Platform,
-    Alert, 
-    YellowBox
      } from 'react-native';
 
 
@@ -27,12 +25,10 @@ export default class Mom extends React.Component {
       };
 
 
-    constructor(props) {
-        super(props);
-        YellowBox.ignoreWarnings([
-         'Warning: isMounted(...) is deprecated', 'Module RCTImageLoader'
-       ]);
-      }
+      state = {
+        value: 0
+      };
+
 
     render() {
         return (
@@ -46,7 +42,18 @@ export default class Mom extends React.Component {
 
                         <MenuOptions>
                             <MenuOption value={'Price'}>
-                                <Text style={styles.customFont}>Price</Text>
+                                <Slider
+                                style={{width: 190, height: 30, borderRadius: 50}}
+                                minimumValue={10}
+                                maximumValue={500}
+                                step={10}
+                            
+                                value={this.state.value}
+                                onValueChange={value => this.setState({ value })}
+                                />
+                                <Text style={styles.customFont}>
+                                    Price: ${this.state.value}
+                                </Text>
                             </MenuOption>
 
                             <MenuOption value={'Age'}>
@@ -57,6 +64,7 @@ export default class Mom extends React.Component {
 
                     </Menu>
                 </MenuProvider>
+
                 <Text>Mom</Text>
             </View>
         )

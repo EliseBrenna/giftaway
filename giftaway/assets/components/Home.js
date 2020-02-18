@@ -165,7 +165,7 @@ class SplashScreen extends React.Component {
                     colors={['#ef0870', '#52308c']}
                     style={splashStyle.container}>
                     {/* <Image source={{uri: giftaway }} style={splashStyle.logo} /> */}
-                    <Text style={splashStyle.slogan}>Don't gift up!</Text>
+                    <Text style={splashStyle.slogan}></Text>
                 </LinearGradient>   
             </View>
 
